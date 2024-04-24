@@ -1,0 +1,8 @@
+[package]
+name = "play_with_opencv"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.82"
+opencv = "0.91.1"
