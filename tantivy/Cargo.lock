@@ -518,6 +518,7 @@ name = "play_with_tantivy"
 version = "0.1.0"
 dependencies = [
  "tantivy",
+ "tempfile",
 ]
 
 [[package]]
