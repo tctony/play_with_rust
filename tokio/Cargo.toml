@@ -1,0 +1,9 @@
+[package]
+name = "play_with_tokio"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.40.0", features = ["full"] }
+tokio-stream = { version = "0.1.16", features = ["sync"] }
+futures = { version = "0.3.30", default-features = false, features = ["executor"] }
