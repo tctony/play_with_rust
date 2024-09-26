@@ -1,0 +1,8 @@
+[package]
+name = "codelldb"
+version = "0.1.0"
+authors = ["Tony Tang <tangchang21@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.40.0", features = ["full"] }

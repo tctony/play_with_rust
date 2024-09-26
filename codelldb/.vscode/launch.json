@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "type": "lldb",
+          "request": "attach",
+          "name": "Attach to Rust Process",
+          "pid": "${input:pid}",
+          "program": "${workspaceFolder}/target/debug/codelldb",
+          "sourceLanguages": ["rust"]
+      }
+  ],
+  "inputs": [
+      {
+          "id": "pid",
+          "type": "promptString",
+          "description": "Enter the process ID (PID) to attach to",
+          "default": ""
+      }
+  ]
+}
