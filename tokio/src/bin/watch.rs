@@ -3,10 +3,17 @@ use tokio::sync::watch;
 #[tokio::main]
 async fn main() {
     let (tx, mut rx) = watch::channel(false);
+    let mut rx2 = rx.clone();
 
     tokio::spawn(async move {
         if rx.wait_for(|v| *v).await.is_ok() {
-            println!("did init");
+            println!("rx did recv init");
+        }
+    });
+
+    tokio::spawn(async move {
+        if rx2.wait_for(|v| *v).await.is_ok() {
+            println!("rx2 did recv init");
         }
     });
 
