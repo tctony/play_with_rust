@@ -6,8 +6,12 @@ async fn main() {
     let mut rx2 = rx.clone();
 
     tokio::spawn(async move {
-        if rx.wait_for(|v| *v).await.is_ok() {
-            println!("rx did recv init");
+        loop {
+            if rx.wait_for(|v| *v).await.is_ok() {
+                println!("rx did recv init");
+            }
+
+            tokio::time::sleep(std::time::Duration::from_secs(1)).await;
         }
     });
 
@@ -28,4 +32,6 @@ async fn main() {
     tx.send(true).unwrap();
     tokio::time::sleep(std::time::Duration::from_millis(100)).await;
     println!("end.");
+
+    tokio::time::sleep(std::time::Duration::from_millis(3_000)).await;
 }
